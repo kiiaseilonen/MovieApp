@@ -1,6 +1,7 @@
 window.addEventListener('load', ddl);
 window.addEventListener('load', haeleffat);
 window.addEventListener('load', haepaiva);
+document.getElementById("lataaNaytos").addEventListener('click', lataaNaytokset);
 
 
 
@@ -90,6 +91,60 @@ function haeleffat() {
 function haepaiva() {
     var xhr = new XMLHttpRequest();
 
+    xhr.open('GET', 'https://www.finnkino.fi/xml/ScheduleDates/', true);
+
+  xhr.onload = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+
+        
+        xmlDoc = xhr.responseXML;
+        näytösTiedot = xmlDoc.getElementsByTagName("Dates");
+        var date = xmlDoc.getElementsByTagName("dateTime");
+        ddl = document.getElementById("paivat");
+
+        for (i = 0; i < date.length; i = i + 1) {
+           
+            var option = document.createElement("option");
+            option.text = date[i].childNodes[0].nodeValue;
+            option.value = date[i].childNodes[0].nodeValue;
+            
+
+            ddl.options.add(option);
+        
+        }
+           
+    
+    }
+}
+    xhr.send();
+}
+/*
+
+  var day = option.value.substring(8, 10);
+            var month = option.value.substring(5, 7);
+            var year = option.value.substring(0, 4);
+            var option = day + "." + month + "." + year;
+
+
+
+"https://www.finnkino.fi/xml/ScheduleDates/",
+    function (dates) {
+      $(dates)
+        .find("dateTime")
+        .each(function () {
+          var xDate = $(this).text();
+          var day = xDate.substring(8, 10);
+          var month = xDate.substring(5, 7);
+          var year = xDate.substring(0, 4);
+          var pretty = day + "." + month + "." + year;
+
+          $("#Date").append(
+            '<option value="' + pretty + '">' + pretty + "</option>" */
+
+
+function haeAikataulut() {
+    var xhr = new XMLHttpRequest();
+
     xhr.open('GET', 'https://www.finnkino.fi/xml/Schedule/', true);
 
   xhr.onload = function() {
@@ -97,25 +152,30 @@ function haepaiva() {
         var leffat = JSON.parse(JSON.stringify(this.response));
         
         xmlDoc = xhr.responseXML;
-        näytösTiedot = xmlDoc.getElementsByTagName("Show");
-        ddl = document.getElementById("paivat");
+        näytösiedot = xmlDoc.getElementsByTagName("Show");
 
-        for (i = 1; i < näytösTiedot.length; i = i + 1) {
-           
-            var option = document.createElement("option");
-            option.text = näytösTiedot[i].getElementsByTagName("dttmShowStart")[0].childNodes[0].nodeValue;
-            option.value = näytösTiedot[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue;
-            ddl.options.add(option);
+    //  luodaan taulukko, jonne tulostetaan halutut arvot
+        taulukko = "<tr><th> Aikataulut </th></th>";
+
+        console.log(leffat);      
         
+    // käydään läpi kaikki leffateatterit ID-tunnuksien mukaan
+        for (i = 2; i < näytösiedot.length; i = i + 1) {
+        var id = näytösiedot[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue;
+        taulukko += "<tr onclick='show(" + id + ")'><td>";
+        // lisätään elokuvateatterit nimen mukaan taulukkoon
+        taulukko = taulukko + näytösiedot[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue;
+        taulukko = taulukko + näytösiedot[i].getElementsByTagName("Genres")[0].childNodes[0].nodeValue;
+        }
+        // luodaan taulukko "theaters"-osioon
+        document.getElementById("aikataulut").innerHTML = taulukko;
+
         }
     }
-}
     xhr.send();
 }
 
-
-
-function haeAikataulut() {
+function lataaNaytokset() {
     var xhr = new XMLHttpRequest();
 
     xhr.open('GET', 'https://www.finnkino.fi/xml/Schedule/', true);
