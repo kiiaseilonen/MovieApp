@@ -3,29 +3,32 @@
     background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
     background-size: cover;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-
   }
+
 
 
   h1 {
     color: #fdc300;
     text-align: center;
+    margin-top: 30px;
   }
 
   #logo {
     height: 50px;
     width: 50px;
+    vertical-align:bottom;
   }
 
   p{
-    color: white;
+    color: rgb(247, 247, 247);
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    margin-top: 40px;
   }
 
   form {
     text-align: center;
+    margin-bottom: 30px;
   }
 
   select{
@@ -42,10 +45,10 @@
     background-color: #fdc300;
     margin-left: 20px;
   }
-  
+
   #leffatiedot{
     margin: 30px auto;
-    width: 950px;
+    width: 50%;
     background-color: rgb(32, 32, 32);
     
   }
@@ -91,7 +94,7 @@ tbody{
 }
 
  h3{
-  color: white;
+  color:  rgb(247, 247, 247);
   width: 316px;
  }
 
@@ -100,17 +103,16 @@ tbody{
   
  }
 
-
 ::-webkit-scrollbar {
-  width: 10px; /* Mostly for vertical scrollbars */
-  height: 10px; /* Mostly for horizontal scrollbars */
+  width: 10px; 
+ 
   scrollbar-color: #999 #333;
 }
 
-::-webkit-scrollbar-thumb { /* Foreground */
+::-webkit-scrollbar-thumb { 
   background: #999;
 }
-::-webkit-scrollbar-track { /* Background */
+::-webkit-scrollbar-track { 
   background: #333;
 }
 
