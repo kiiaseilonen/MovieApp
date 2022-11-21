@@ -1,2 +1,3 @@
-# MovieApp
- T2
+# Projekti 2a: AJAX-sovellus
+ Finnkinon apia hyödyntäen toteutettu sovellus, jolla voidaan hakea elokuvien aikatauluja teattereittain.
+ 
