@@ -4,25 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie App</title>
+    <title>Finnkinon elokuvahakemisto</title>
     <link rel="stylesheet" href="style.css" />
     <script src="main.js"></script>
   </head>
   <body>
-    <h1>FinnKino Elokuva App</h1>
-    <button id="btn" onclick="loadData()">Click</button>
-    <button id="btn" onclick="">Aikataulut</button>
+    <h1>
+      <img
+        id="logo"
+        src="https://seeklogo.com/images/F/finnkino-logo-DFB607D2AA-seeklogo.com.png"
+      />
+      FinnKinon Elokuvahakemisto
+    </h1>
+    <p>
+      Aikeissa mennä elokuviin? Täältä löydät Suomen jokaisen FinnKino-teatterin
+      leffa-aikataulut!
+    </p>
 
-    <p>Valitse Teatteri</p>
     <form>
-      <select id="ddmenu"></select>
-      <select id="elokuvat"></select>
-      <select id="paivat"></select>
+      <select id="teatterit">
+        <option id="op" value="hidden" selected>Valitse Teatteri</option>
+      </select>
+      <select id="paivat">
+        <option id="filter" value="hidden" selected>Valitse Päivä</option>
+      </select>
+      <select id="elokuvat">
+        <option value="hidden" selected>Valitse Elokuva</option>
+      </select>
+
       <button id="lataaNaytos" type="button">Etsi Näytökset</button>
     </form>
-    <form></form>
-
-    <div id="theaters"></div>
-    <div id="aikataulut"></div>
+    <div id="leffatiedot"></div>
   </body>
 </html>

@@ -1,0 +1,117 @@
+
+  body {
+    background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    background-size: cover;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+
+  }
+
+
+  h1 {
+    color: #fdc300;
+    text-align: center;
+  }
+
+  #logo {
+    height: 50px;
+    width: 50px;
+  }
+
+  p{
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  select{
+    height: 40px;
+    padding: 5px;
+  }
+
+  option[value="hidden"][disabled] {
+    display: none;
+  }
+
+  button{
+    height: 40px;
+    background-color: #fdc300;
+    margin-left: 20px;
+  }
+  
+  #leffatiedot{
+    margin: 30px auto;
+    width: 950px;
+    background-color: rgb(32, 32, 32);
+    
+  }
+
+  table{
+    border-collapse: collapse;
+    width: 100%;
+    height: 800px;
+    overflow-y:scroll;
+    display:block;
+    overflow-x: visible;
+}
+
+tbody{
+  width: 100%;
+  display: table;
+}
+
+  img {
+    margin-right: 20px;
+    height: 180px;
+  }
+
+  #time {
+  margin-top: -10px;
+  font-size: 30px;
+  color: #fdc300;
+   
+  }
+
+  #date{
+    margin-top: -20px;
+    color: grey;
+  }
+
+ h4{
+  margin-top: -20px;
+  color: grey;
+   }
+
+#theather {
+  margin-right: 40px;
+}
+
+ h3{
+  color: white;
+  width: 316px;
+ }
+
+ .line {
+  border-bottom: 1px solid grey; 
+  
+ }
+
+
+::-webkit-scrollbar {
+  width: 10px; /* Mostly for vertical scrollbars */
+  height: 10px; /* Mostly for horizontal scrollbars */
+  scrollbar-color: #999 #333;
+}
+
+::-webkit-scrollbar-thumb { /* Foreground */
+  background: #999;
+}
+::-webkit-scrollbar-track { /* Background */
+  background: #333;
+}
+
+  
